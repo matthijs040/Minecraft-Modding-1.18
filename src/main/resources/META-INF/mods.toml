@@ -9,7 +9,7 @@ logoFile="examplemod.png"
 credits="A mod by MattIce"
 authors="MattIce"
 description='''
-A tutorial mod by MattIce.
+A mod by MattIce.
 '''
 
 [[dependencies.tutorialmod]] 

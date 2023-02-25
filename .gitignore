@@ -1,2 +1,11 @@
+# Generated build artifacts:
 build
+bin
+
+# Generated gradle files:
 .gradle
+gradlew*
+gradle
+
+# Run generated files:
+run
