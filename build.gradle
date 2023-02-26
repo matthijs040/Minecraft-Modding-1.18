@@ -6,11 +6,13 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7.+' // For TFC mixins
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
 
 version = '1.0'
 group = 'com.mattice.tutorialmod'
@@ -20,7 +22,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.18.1'
+    mappings channel: 'official', version: '1.18.2'
 
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     runs {
@@ -39,11 +41,8 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-
             property 'forge.logging.markers', 'REGISTRIES'
-
             property 'forge.logging.console.level', 'debug'
-
             mods {
                 tutorialmod {
                     source sourceSets.main
@@ -54,11 +53,8 @@ minecraft {
         data {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
-
             property 'forge.logging.console.level', 'debug'
-
             args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-
             mods {
                 tutorialmod {
                     source sourceSets.main
@@ -71,10 +67,22 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven {
+        url 'https://www.cursemaven.com'
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.1-39.0.5'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.2.1'
+
+    runtimeOnly fg.deobf("curse.maven:just_enough_items-238222:4352925")    // TFC dependency
+    runtimeOnly fg.deobf("curse.maven:patchouli-306770:3846086")        // TFC dependency
+    fg.deobf("curse.maven:tfc-302973:4395178")
+    runtimeOnly fg.deobf("curse.maven:tfc-302973:4395178")
+    
 }
 
 jar {
