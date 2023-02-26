@@ -12,7 +12,7 @@
       "args": "--launchTarget forgeclientuserdev --version MOD_DEV --assetIndex 1.18 --assetsDir /home/matthijs/.gradle/caches/forge_gradle/assets --gameDir . --fml.forgeVersion 40.2.1 --fml.mcVersion 1.18.2 --fml.forgeGroup net.minecraftforge --fml.mcpVersion 20220404.173914",
       "env": {
         "MOD_CLASSES": "tutorialmod%%${workspaceFolder}/bin/main:tutorialmod%%${workspaceFolder}/bin/main",
-        "MCP_MAPPINGS": "official_1.18.2"
+        "MCP_MAPPINGS": "parchment_2022.11.06-1.18.2"
       }
     },
     {
@@ -26,7 +26,7 @@
       "args": "--launchTarget forgedatauserdev --assetIndex 1.18 --assetsDir /home/matthijs/.gradle/caches/forge_gradle/assets --gameDir . --fml.forgeVersion 40.2.1 --fml.mcVersion 1.18.2 --fml.forgeGroup net.minecraftforge --fml.mcpVersion 20220404.173914 --mod examplemod --all --output /home/matthijs/repos/java/Minecraft-Modding-1.18/src/generated/resources --existing /home/matthijs/repos/java/Minecraft-Modding-1.18/src/main/resources",
       "env": {
         "MOD_CLASSES": "tutorialmod%%${workspaceFolder}/bin/main:tutorialmod%%${workspaceFolder}/bin/main",
-        "MCP_MAPPINGS": "official_1.18.2"
+        "MCP_MAPPINGS": "parchment_2022.11.06-1.18.2"
       }
     },
     {
@@ -40,7 +40,7 @@
       "args": "--launchTarget forgeserveruserdev --gameDir . --fml.forgeVersion 40.2.1 --fml.mcVersion 1.18.2 --fml.forgeGroup net.minecraftforge --fml.mcpVersion 20220404.173914",
       "env": {
         "MOD_CLASSES": "tutorialmod%%${workspaceFolder}/bin/main:tutorialmod%%${workspaceFolder}/bin/main",
-        "MCP_MAPPINGS": "official_1.18.2"
+        "MCP_MAPPINGS": "parchment_2022.11.06-1.18.2"
       }
     }
   ]
